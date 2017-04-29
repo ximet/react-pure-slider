@@ -6,8 +6,18 @@ export const easeInOutQuad = (time, beginValue, changeInValue, duration) => {
     if ((time /= duration / 2) < 1) {
       return changeInValue / 2 * time * time + beginValue;
     }
-    else {
-      time--;
-      return -changeInValue / 2 * (time * (time - 2) - 1) + beginValue;
-    }
+
+    time--;
+    
+    return -changeInValue / 2 * (time * (time - 2) - 1) + beginValue;
 }
+
+export const easeInOutCubic = (time, beginValue, changeInValue, duration) => {
+	if ((time /= duration / 2 ) < 1) {
+    return changeInValue / 2 * time * time * time + beginValue;
+  }
+
+	time -= 2;
+
+	return changeInValue / 2 * (time * time * time + 2) + beginValue;
+};
