@@ -15,4 +15,20 @@ class Slider extends React.Component {
     }
 }
 
+Slider.propTypes = {
+    speed: PropTypes.number,
+    transitionStart: PropTypes.func,
+    transitionEnd: PropTypes.func,
+    wrapperStyle: PropTypes.object,
+    childStyle: PropTypes.object
+}
+
+Slider.defaultProps = {
+  speed: 2000,
+  transitionStart: () => {},
+  transitionEnd: () => {},
+  wrapperStyle: {},
+  childStyle: {}
+}
+
 export default Slider;
